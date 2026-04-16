@@ -1,0 +1,545 @@
+/* ========================================
+   Personal Blog - Premium Design System
+   ======================================== */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+:root {
+  /* Brand Colors */
+  --brand-1: #6366f1;
+  --brand-2: #818cf8;
+  --brand-3: #a5b4fc;
+  --brand-soft: rgba(99, 102, 241, 0.08);
+
+  /* Gradients */
+  --gradient-brand: linear-gradient(135deg, #6366f1 0%, #818cf8 50%, #6366f1 100%);
+  --gradient-text: linear-gradient(135deg, #6366f1 0%, #a78bfa 100%);
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-xl: 0 16px 48px rgba(99, 102, 241, 0.15);
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'Fira Code', 'JetBrains Mono', Consolas, monospace;
+}
+
+/* ========================================
+   Base Styles
+   ======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================
+   Navigation
+   ======================================== */
+
+.VPNav {
+  backdrop-filter: saturate(180%) blur(20px);
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
+}
+
+.VPNavBarTitle .title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.VPNavBarMenuLink {
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.VPNavBarMenuLink:hover,
+.VPNavBarMenuLink.active {
+  color: var(--brand-1) !important;
+}
+
+/* ========================================
+   Hero Section
+   ======================================== */
+
+.VPHero {
+  padding: 80px 24px 60px !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.VPHero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+              radial-gradient(circle at 70% 80%, rgba(167, 139, 250, 0.06) 0%, transparent 50%);
+  z-index: -1;
+}
+
+.VPHero .name {
+  font-size: 4rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em;
+  background: var(--gradient-text) !important;
+  background-size: 200% auto !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  animation: gradient-shift 4s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+}
+
+.VPHero .text {
+  font-size: 1.6rem !important;
+  font-weight: 500;
+  color: var(--vp-c-text-1) !important;
+  letter-spacing: -0.01em;
+}
+
+.VPHero .tagline {
+  font-size: 1.1rem !important;
+  color: var(--vp-c-text-2) !important;
+  max-width: 520px;
+  line-height: 1.7;
+}
+
+.VPHero .image-container {
+  border-radius: var(--radius-xl) !important;
+  box-shadow: var(--shadow-xl) !important;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+}
+
+/* Hero Actions */
+.VPHero .actions {
+  margin-top: var(--space-xl) !important;
+}
+
+.VPHero .actions .VPButton {
+  padding: 0.75rem 1.75rem !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  border-radius: var(--radius-md) !important;
+  transition: all 0.3s ease !important;
+}
+
+.VPHero .actions .VPButton.brand {
+  background: var(--gradient-brand) !important;
+  background-size: 200% auto !important;
+  border: none !important;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.35) !important;
+}
+
+.VPHero .actions .VPButton.brand:hover {
+  background-position: right center !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(99, 102, 241, 0.45) !important;
+}
+
+.VPHero .actions .VPButton.alt {
+  border: 2px solid var(--vp-c-divider) !important;
+  background: transparent !important;
+}
+
+.VPHero .actions .VPButton.alt:hover {
+  border-color: var(--brand-1) !important;
+  color: var(--brand-1) !important;
+  background: var(--brand-soft) !important;
+}
+
+/* ========================================
+   Features Grid
+   ======================================== */
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 2rem 5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-brand);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.feature-card:hover {
+  border-color: rgba(99, 102, 241, 0.3);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+}
+
+.feature-card:hover::before {
+  opacity: 1;
+}
+
+.feature-card:hover .feature-arrow {
+  transform: translateX(6px);
+  color: var(--brand-1);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.25rem;
+  display: block;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.feature-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 0.75rem 0;
+  color: var(--vp-c-text-1);
+  letter-spacing: -0.01em;
+}
+
+.feature-desc {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--vp-c-text-2);
+  margin: 0;
+  flex: 1;
+}
+
+.feature-arrow {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.25rem;
+  color: var(--vp-c-text-3);
+  transition: all 0.3s ease;
+}
+
+/* ========================================
+   Content Typography
+   ======================================== */
+
+.vp-doc h1 {
+  font-size: 2.4rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem !important;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.vp-doc h2 {
+  font-size: 1.6rem !important;
+  font-weight: 700;
+  margin-top: 3rem !important;
+  margin-bottom: 1rem !important;
+  padding-bottom: 0.75rem !important;
+  border-bottom: 2px solid var(--vp-c-divider) !important;
+  letter-spacing: -0.01em;
+}
+
+.vp-doc h3 {
+  font-size: 1.25rem !important;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+  margin-top: 2rem !important;
+}
+
+.vp-doc p {
+  line-height: 1.85;
+  color: var(--vp-c-text-2);
+  margin: 1rem 0;
+}
+
+.vp-doc a {
+  color: var(--brand-1);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.vp-doc a:hover {
+  border-bottom-color: var(--brand-1);
+}
+
+/* ========================================
+   Code Blocks
+   ======================================== */
+
+.vp-doc div[class*='language-'] {
+  border-radius: var(--radius-md) !important;
+  margin: 1.75rem 0 !important;
+  box-shadow: var(--shadow-md) !important;
+  border: 1px solid var(--vp-c-divider);
+  position: relative;
+  overflow: hidden;
+}
+
+.vp-doc div[class*='language-']::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-brand);
+}
+
+.vp-doc div[class*='language-'] code {
+  font-family: var(--font-mono) !important;
+  font-size: 0.9rem !important;
+  line-height: 1.7;
+}
+
+.vp-doc :not(pre) > code {
+  background: var(--brand-soft) !important;
+  color: var(--brand-1) !important;
+  padding: 0.2em 0.5em !important;
+  border-radius: var(--radius-sm) !important;
+  font-size: 0.9em !important;
+  font-weight: 500;
+  border: 1px solid rgba(99, 102, 241, 0.15);
+}
+
+/* ========================================
+   Custom Containers
+   ======================================== */
+
+.vp-doc .custom-block {
+  border-radius: var(--radius-md) !important;
+  padding: 1.25rem 1.5rem !important;
+  margin: 1.75rem 0 !important;
+  border: 1px solid !important;
+}
+
+.vp-doc .custom-block.info {
+  background: var(--brand-soft);
+  border-color: rgba(99, 102, 241, 0.2) !important;
+  border-left: 4px solid var(--brand-1) !important;
+}
+
+.vp-doc .custom-block.warning {
+  background: rgba(251, 191, 36, 0.08);
+  border-color: rgba(251, 191, 36, 0.2) !important;
+  border-left: 4px solid #fbbf24 !important;
+}
+
+.vp-doc .custom-block.danger {
+  background: rgba(239, 68, 68, 0.06);
+  border-color: rgba(239, 68, 68, 0.2) !important;
+  border-left: 4px solid #ef4444 !important;
+}
+
+.vp-doc .custom-block-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+/* ========================================
+   Sidebar
+   ======================================== */
+
+.VPSidebar {
+  background: var(--vp-c-bg-soft) !important;
+}
+
+.VPSidebarItem .text {
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.VPSidebarItem.is-active > .item .link .text {
+  color: var(--brand-1) !important;
+  font-weight: 600;
+}
+
+.VPSidebarItem > .item .link:hover .text {
+  color: var(--brand-1);
+}
+
+/* ========================================
+   Tables
+   ======================================== */
+
+.vp-doc table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 2rem 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--vp-c-divider);
+}
+
+.vp-doc th {
+  background: var(--brand-soft);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: left;
+  padding: 1rem 1.25rem;
+  color: var(--brand-1);
+}
+
+.vp-doc td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--vp-c-divider);
+  font-size: 0.95rem;
+}
+
+.vp-doc tr:last-child td {
+  border-bottom: none;
+}
+
+.vp-doc tr:hover td {
+  background: var(--vp-c-bg-soft);
+}
+
+/* ========================================
+   Footer
+   ======================================== */
+
+.VPFooter {
+  border-top: 1px solid var(--vp-c-divider) !important;
+  background: var(--vp-c-bg-soft) !important;
+  padding: 2rem !important;
+}
+
+.VPFooter .message,
+.VPFooter .copyright {
+  font-size: 0.9rem;
+  color: var(--vp-c-text-2);
+}
+
+/* ========================================
+   Dark Mode
+   ======================================== */
+
+.Dark {
+  --brand-soft: rgba(99, 102, 241, 0.15);
+}
+
+.Dark .VPNav {
+  background: rgba(30, 30, 40, 0.85) !important;
+}
+
+.Dark .VPHero::before {
+  background: radial-gradient(circle at 30% 20%, rgba(99, 102, 241, 0.12) 0%, transparent 50%),
+              radial-gradient(circle at 70% 80%, rgba(167, 139, 250, 0.08) 0%, transparent 50%);
+}
+
+.Dark .feature-card {
+  background: var(--vp-c-bg-soft);
+}
+
+.Dark .feature-card:hover {
+  box-shadow: 0 8px 32px rgba(99, 102, 241, 0.25);
+}
+
+/* ========================================
+   Animations
+   ======================================== */
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.VPHero,
+.feature-card {
+  animation: fade-in-up 0.6s ease-out;
+}
+
+.feature-card:nth-child(1) { animation-delay: 0.1s; }
+.feature-card:nth-child(2) { animation-delay: 0.2s; }
+.feature-card:nth-child(3) { animation-delay: 0.3s; }
+.feature-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* ========================================
+   Responsive
+   ======================================== */
+
+@media (max-width: 768px) {
+  .VPHero .name {
+    font-size: 2.8rem !important;
+  }
+
+  .VPHero .text {
+    font-size: 1.25rem !important;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem 1.5rem 3rem;
+  }
+
+  .feature-card {
+    padding: 1.5rem;
+  }
+}
