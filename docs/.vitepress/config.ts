@@ -59,6 +59,8 @@ export default defineConfig({
         {
           text: '作品集',
           items: [
+            { text: 'Vue 3 企业级后台管理系统', link: '/projects/vue3-admin' },
+            { text: '微信小程序 - 记账本应用', link: '/projects/mini-program' },
             { text: '示例项目', link: '/projects/demo-project' }
           ]
         }
