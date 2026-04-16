@@ -6,15 +6,15 @@ hero:
   text: "全栈开发者的代码人生"
   tagline: "探索前端工程化、架构设计与工程实践"
   image:
-    src: /personal-blog/hero-image.svg
+    src: /hero-image.svg
     alt: 技术随笔
   actions:
     - theme: brand
       text: 浏览博客
-      link: /personal-blog/blog/
+      link: /blog/
     - theme: alt
       text: 查看作品
-      link: /personal-blog/projects/
+      link: /projects/
 ---
 
 <script setup>
@@ -25,25 +25,25 @@ const features = ref([
     icon: '📝',
     title: '技术笔记',
     description: '从 Vue/React 到 TypeScript，记录开发中的点滴心得与踩坑经验，持续学习与成长',
-    link: '/personal-blog/blog/'
+    link: '/blog/'
   },
   {
     icon: '🛠️',
     title: '工程实践',
     description: '前端工程化、CICD 流程、自动化测试，构建可维护的技术体系与开发流程',
-    link: '/personal-blog/blog/performance-optimization'
+    link: '/blog/performance-optimization'
   },
   {
     icon: '🏗️',
     title: '架构设计',
     description: '从模块设计到系统架构，探讨如何构建稳健、高效、可扩展的软件系统',
-    link: '/personal-blog/blog/'
+    link: '/blog/'
   },
   {
     icon: '📚',
     title: '开源分享',
     description: '贡献开源项目，分享工具库与框架的最佳实践，与社区共同成长',
-    link: '/personal-blog/projects/'
+    link: '/projects/'
   }
 ])
 </script>
