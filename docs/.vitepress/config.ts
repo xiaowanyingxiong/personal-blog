@@ -46,6 +46,13 @@ export default defineConfig({
             { text: 'Redis 性能优化实战', link: '/blog/redis-optimization' },
             { text: '数据库设计与规范化', link: '/blog/database-design' }
           ]
+        },
+        {
+          text: '开源分享',
+          items: [
+            { text: '开源项目贡献指南', link: '/blog/oss-contribution' },
+            { text: '开源许可证完全指南', link: '/blog/opensource-licenses' }
+          ]
         }
       ],
       '/projects/': [

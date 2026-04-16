@@ -4,6 +4,8 @@
 
 ## 最新文章
 
+- [开源许可证完全指南](./opensource-licenses) — 了解主流开源许可证
+- [开源项目贡献指南](./oss-contribution) — 如何参与开源项目贡献
 - [数据库设计与规范化](./database-design) — 掌握数据库设计原则，构建高效可靠的数据模型
 - [React Hooks 最佳实践](./vue3-composition-api) — 掌握 React Hooks 的使用技巧
 - [Webpack 5 模块联邦详解](./webpack-federation) — 深入理解 Module Federation，实现微前端架构
