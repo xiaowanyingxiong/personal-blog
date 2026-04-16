@@ -1,16 +1,6 @@
 ---
 title: 示例项目
 description: 这是一个演示项目，展示了个人作品展示页面的功能
-techStack:
-  - Vue 3
-  - TypeScript
-  - VitePress
-screenshots:
-  - /images/project-demo-1.png
-  - /images/project-demo-2.png
-videoUrl: ""
-demoUrl: "https://example.com"
-repoUrl: "https://github.com/yourname/demo"
 ---
 
 # 示例项目
