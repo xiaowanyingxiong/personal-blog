@@ -3,12 +3,13 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: '技术随笔',
   description: '全栈开发者的代码人生 - 探索前端工程化、架构设计与工程实践',
+  base: '/personal-blog/',
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }]
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/personal-blog/logo.svg' }]
   ],
   ignoreDeadLinks: true,
   themeConfig: {
-    logo: '/logo.svg',
+    logo: '/personal-blog/logo.svg',
     nav: [
       { text: '首页', link: '/' },
       { text: '博客', link: '/blog/' },
